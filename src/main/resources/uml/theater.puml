@@ -1,0 +1,46 @@
+@startuml theater
+
+class Menu{
+    Scanner scanner
+
+    showMenu():void
+}
+
+Menu <-- Theater
+
+class Theater{
+    seats: Seat[][]
+
+    consult(): void 
+    book(row: int, column: int): void
+    cancel(row: int, column: int): void
+}
+
+Theater *-- Seat
+
+
+class Seat{
+    SeatStatus status
+
+    getStatus(): SeatStatus
+    setStatus(status:SeatStatus): void
+}
+
+Seat <-- SeatStatus
+
+enum SeatStatus{
+    TAKEN, FREE
+}
+
+exception SeatOutOfRangeException{
+    SeatOutOfRangeException(message: String): void
+}
+
+exception TakenSeatException{
+    TakenSeatException(message: String): void
+}
+
+exception FreeSeatException{
+    FreeSeatException(message: String): void
+}
+@enduml
