@@ -6,9 +6,9 @@ class Menu{
     showMenu():void
 }
 
-Menu <-- Theater
+Menu <-- TheaterService
 
-class Theater{
+class TheaterService{
     seats: Seat[][]
 
     consult(): void 
@@ -16,7 +16,7 @@ class Theater{
     cancel(row: int, column: int): void
 }
 
-Theater *-- Seat
+TheaterService *-- Seat
 
 
 class Seat{
