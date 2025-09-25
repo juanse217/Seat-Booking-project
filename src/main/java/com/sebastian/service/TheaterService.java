@@ -5,10 +5,12 @@ import com.sebastian.model.SeatStatus;
 
 
 public class TheaterService {
+    private final int ROWS = 10;
+    private final int COLUMNS = 6;
     private Seat[][] seats;
 
     public TheaterService(){
-        seats = new Seat[10][6];
+        seats = new Seat[ROWS][COLUMNS];
 
         for(int i = 0; i < seats.length; i++){
             for (int j = 0; j < seats[i].length; j++) {
@@ -16,7 +18,15 @@ public class TheaterService {
             }
         }
     }
+    
+    public SeatStatus getSeatStatus(int row, int column){
 
+        if((row >ROWS || row < 1|| column < 1 ||column > COLUMNS) ){
+            throw new SeatOutOfRangeException("The seat is out of range, can't book");
+        }
+        
+        return seats[row-1][column-1].getStatus();
+    }
     public void consult(){
         for (int i = 0; i < seats.length; i++) {
             System.out.println("- - - - - - - - - -");
@@ -29,7 +39,7 @@ public class TheaterService {
   
     public void book(int row, int column){
 
-        if((row >10 || row < 1|| column < 1 ||column > 6) ){
+        if((row >ROWS || row < 1|| column < 1 ||column > COLUMNS) ){
             throw new SeatOutOfRangeException("The seat is out of range, can't book");
         }
 
@@ -43,7 +53,7 @@ public class TheaterService {
     }
 
     public void cancel(int row, int column){
-        if((row >10 || column > 6)){
+        if((row >ROWS || row < 1|| column < 1 ||column > COLUMNS)){
             throw new SeatOutOfRangeException("The seat is out of range, can't cancel");
         }
 

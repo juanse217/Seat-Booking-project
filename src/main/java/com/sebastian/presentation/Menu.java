@@ -17,7 +17,7 @@ public class Menu {
         int column = 0; 
 
         do{
-            System.out.println("Select one option:\n1. Consult theater seats\n2. Book seat\n3.Cancel booked seat\n4. Exit");
+            System.out.println("Select one option:\n1. Consult theater seats\n2. Book seat\n3. Cancel booked seat\n4. Check specific seat\n5. Exit");
             decision = sc.nextInt();
             sc.nextLine(); //buffer cleaning
             switch (decision) {
@@ -40,12 +40,19 @@ public class Menu {
                     break;
 
                 case 4:
+                    System.out.println("Give me the row");
+                    row = Integer.valueOf(sc.nextLine());
+                    System.out.println("Give me the column cancel");
+                    column = Integer.valueOf(sc.nextLine());
+                    service.getSeatStatus(row, column);
+                    break;
+                
+                case 5:
                     System.out.println("Exiting menu, bye!");
                     break;
-
                 default:
                     break;
             }
-        }while(decision != 4);
+        }while(decision != 5);
     }
 }
