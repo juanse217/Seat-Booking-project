@@ -1,0 +1,8 @@
+16:37:58 [main] INFO  com.sebastian.service.TheaterService - Starting system
+16:37:58 [main] INFO  com.sebastian.service.TheaterService - Starting service
+16:38:03 [main] INFO  com.sebastian.service.TheaterService - Displaying all the seats
+16:38:09 [main] INFO  com.sebastian.service.TheaterService - Booking process
+16:38:13 [main] INFO  com.sebastian.service.TheaterService - Displaying all the seats
+16:38:22 [main] INFO  com.sebastian.service.TheaterService - Cancellation process
+16:38:34 [main] INFO  com.sebastian.service.TheaterService - Getting status for row1 column1
+16:38:40 [main] INFO  com.sebastian.service.TheaterService - Closing system

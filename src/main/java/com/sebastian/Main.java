@@ -1,12 +1,20 @@
 package com.sebastian;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.sebastian.presentation.Menu;
+import com.sebastian.service.TheaterService;
 
 public class Main {
+
+    private static final Logger logger = LoggerFactory.getLogger(TheaterService.class);
     public static void main(String[] args) {
-        System.out.println("Starting system: ");
+        
+        logger.info("Starting system");
         Menu menu = new Menu(); 
         menu.showMenu();
-        System.out.println("Closing system ");
+        logger.info("Closing system");
+         
     }
 }
